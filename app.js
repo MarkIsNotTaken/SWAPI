@@ -1,25 +1,24 @@
-var storage = [];
-$("body").append("<input id='input'>");
-
-const buildHtmlElements = (movie) => {
-	var films = storage[0].results;
-	// for (let loop of films){
-	// 		let div = "<div class='container'></div>";
-	// 		$('#films').append(div);
-	// 		let divs = $('.container');
-	// 	}
-	$("body").append("<div id='container'></div>");
-
+const buildHtmlElements = (responseData) => {
+	$("#films").append("<div id='container'></div>"),
+	$("#container").append("<h1 class='title'></h1>"),
+	$("#container").append("<h1 class='director'></h1>"),
+	$("#container").append("<h1 class='episode'></h1>"),
+	$("#container").append("<h1 class='producer'></h1>"),
+	$("#container").append("<h1 class='opening_crawl'></h1>"),
+	$("#container").append("<h1 class='release_date'></h1>")
 }
 
-$("button").click(function(){
-	$.ajax({
+$.ajax({
 	url: "https://swapi.co/api/films/",
 	type: "GET",
 	success: function getFilmData(data){
-		storage.push(JSON.parse(JSON.stringify(data)));
-		buildHtmlElements($("#input").innerText);
-		}
-	})
+			
+	}
 })
+
+$("button").click(c = () => {
+	
+})
+
+
 
